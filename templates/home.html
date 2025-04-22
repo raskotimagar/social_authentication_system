@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+        <h1 class="mb-4">Welcome to Our Site</h1>
+        <p class="lead">
+            {% if user.is_authenticated %}
+                Hello, {{ user.username }}!
+            {% else %}
+                Please login or sign up to continue.
+            {% endif %}
+        </p>
+    </div>
+</div>
+{% endblock %}
